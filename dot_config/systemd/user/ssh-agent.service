@@ -1,0 +1,14 @@
+# This file is based on the following Wiki page:
+# https://wiki.archlinux.org/index.php/SSH_keys#Start_ssh-agent_with_systemd_user
+#
+# It also requires exporting SSH_AUTH_SOCK in ~/.zprofile
+
+[Unit]
+Description=SSH key agent
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/ssh-agent -D -a %t/ssh-agent.socket
+
+[Install]
+WantedBy=default.target

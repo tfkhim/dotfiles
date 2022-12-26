@@ -1,0 +1,7 @@
+[".oh-my-zsh"]
+  type = "archive"
+  url = "https://github.com/ohmyzsh/ohmyzsh/tarball/9c2d1af8afa02b5439e8ccc81a160e62e1e59617"
+  exact = true
+  stripComponents = 1
+  checksum.sha512 = "4ef48c82f5c49aec787f54c3d99409ea6c8beceeeea7c3257489985e73e87fe449c7f49cff12c649d65a60b3b6d7b0910db84c78b63e9d69c7ff641b2d8652ea"
+

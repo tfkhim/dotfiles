@@ -1,0 +1,108 @@
+# This file is part of https://github.com/tfkhim/dotfiles
+#
+# Copyright (c) 2022 Thomas Himmelstoss
+#
+# This software is subject to the MIT license. You should have
+# received a copy of the license along with this program.
+
+# This file should only be source by
+# an interactive shell.
+[[ $- != *i* ]] && return
+
+{
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+#
+# See: https://github.com/romkatv/powerlevel10k#how-do-i-configure-instant-prompt
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+#
+# Aliases
+# =======
+#
+
+alias ls='ls --color=auto'
+
+#
+# ZSH plugins
+# ===========
+#
+
+# A small helper to only source files if they exist
+# and are readable.
+function source_existing () {
+  [[ -r "$1" ]] && source "$1"
+}
+
+#
+# Oh My ZSH
+# ---------
+#
+# This configuration framework contains default settings
+# (e.g. keymap and completion) that are more useful than
+# the default ZSH ones. So even without using any of its
+# plugins it provides some value.
+
+if [[ -f "${HOME}/.oh-my-zsh/oh-my-zsh.sh" ]]; then
+  export ZSH="${HOME}/.oh-my-zsh"
+
+  # We do not use any of the themes that come with OMZ
+  # because a system wide installed powerlevel10k theme
+  # is used below.
+  export ZSH_THEME=""
+
+  # The temporary files should reside in another directory.
+  # This prevents the many `has changed prompts` which would
+  # otherwise show up during `chezmoi apply`.
+  export ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/oh-my-zsh"
+
+  plugins=(
+    fzf
+  )
+
+  source "${ZSH}/oh-my-zsh.sh"
+fi
+
+#
+# Powerlevel10k prompt
+# --------------------
+#
+# Install the following packages
+#
+# - Arch Linux: zsh-theme-powerlevel10k
+#
+# This plugin is only sourced for non-tty terminals. On a tty the
+# theme is most likely broken due to incompatible fonts.
+
+if [[ -r "/usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme" ]] && [[ ! "$(tty)" =~ "/dev/tty[1-9]" ]]; then
+  source "/usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme"
+  source_existing "${HOME}/.p10k.zsh"
+fi
+
+#
+# Tooling managers
+# ================
+#
+
+#
+# Node Version Manager (NVM)
+# --------------------------
+#
+# See:
+# - https://aur.archlinux.org/packages/nvm#comment-764001
+# - https://github.com/nvm-sh/nvm/blob/master/README.md#manual-install
+
+source_existing /usr/share/nvm/init-nvm.sh
+
+#
+# Cleanup
+# =======
+#
+
+} always {
+unfunction source_existing
+}

@@ -1,0 +1,33 @@
+# This file is part of https://github.com/tfkhim/dotfiles
+#
+# Copyright (c) 2022 Thomas Himmelstoss
+#
+# This software is subject to the MIT license. You should have
+# received a copy of the license along with this program.
+
+# It is nice to also have the plugin and alias setup in an
+# interactive login shell.
+[[ -f ~/.zshrc ]] && . ~/.zshrc
+
+#
+# Environment variables
+#
+# I prever to put my environment variables into .zprofile. This
+# allows to overriding those variables and keep the overrides in
+# newly spawned shells.
+
+# The ssh-agent daemon is spawned by a Systemd unit.
+# See ~/.config/systemd/user/ssh-agent.service
+export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
+
+if [[ -x "/usr/bin/nvim" ]]; then
+  export EDITOR="/usr/bin/nvim"
+fi
+
+if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+  # This environment variable is required by xdg-desktop-portal-wlr
+  # to know which specific desktop is running.
+  export XDG_CURRENT_DESKTOP=sway
+  exec sway
+fi
+

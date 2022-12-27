@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Logout
+Exec=sh -c '/usr/bin/loginctl terminate-user $USER'
+Categories=System;

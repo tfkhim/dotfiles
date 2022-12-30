@@ -10,8 +10,8 @@
 # Use the rainbow configuration as the baseline. Afterwards
 # change only those settings which are necessary to achieve
 # the desired appearance.
-if [[ -r "/usr/share/zsh-theme-powerlevel10k/config/p10k-rainbow.zsh" ]]; then
-  source "/usr/share/zsh-theme-powerlevel10k/config/p10k-rainbow.zsh"
+if [[ -r "/usr/share/zsh-theme-powerlevel10k/config/p10k-classic.zsh" ]]; then
+  source "/usr/share/zsh-theme-powerlevel10k/config/p10k-classic.zsh"
 fi
 
 () {
@@ -73,53 +73,51 @@ fi
   )
 
   #
-  # status element
-  # --------------
+  # general styling
+  # ---------------
   #
-  # The status element is the first element on the
-  # left side of the prompt. Therefore its visual
-  # appearance should be similar to the dir element.
-  # In case of an error there is already a red
-  # background color set. This case therefore looks
-  # already similar to the dir element. But the
-  # default foreground color doesn't provide a high
-  # contrast. Therefore we change it to white.
-  #
-  # Furthermore the success case is only a green
-  # checkmark by default. The settings below change
-  # this case to a white checkmark on a green
-  # background.
+  # This settings disable the powerline style and
+  # replace it by a more lean styling. There is
+  # now background color for the individual elements,
+  # but  angle separators between them and at the
+  # end of the left prompt and start of the right
+  # prompt.
 
-  typeset -g POWERLEVEL9K_STATUS_ERROR_FOREGROUND=7
-  typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_FOREGROUND=7
-  typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_FOREGROUND=7
+  typeset -g POWERLEVEL9K_BACKGROUND=
+  typeset -g POWERLEVEL9K_FOREGROUND=7
 
-  typeset -g POWERLEVEL9K_STATUS_OK_FOREGROUND=7
-  typeset -g POWERLEVEL9K_STATUS_OK_BACKGROUND=2
-
-  typeset -g POWERLEVEL9K_STATUS_OK_PIPE_FOREGROUND=7
-  typeset -g POWERLEVEL9K_STATUS_OK_PIPE_BACKGROUND=2
+  typeset -g POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR='%244F\uE0B1'
+  typeset -g POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR='%244F\uE0B3'
+  typeset -g POWERLEVEL9K_LEFT_PROMPT_LAST_SEGMENT_END_SYMBOL='%244F\uE0B1'
+  typeset -g POWERLEVEL9K_RIGHT_PROMPT_FIRST_SEGMENT_START_SYMBOL='%244F\uE0B3'
 
   #
-  # execution time element
-  # ----------------------
+  # vcs status
+  # ----------
   #
-  # The desired visual is black text on a yellow background.
-  # But depending on the console emulator color scheme the
-  # background might be orange.
-
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=0
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=226
+  # Do not show the Git or GitHub icon at the start but
+  # show the branch icon if currently on a branch.
+  typeset -g POWERLEVEL9K_VCS_VISUAL_IDENTIFIER_EXPANSION=''
+  typeset -g POWERLEVEL9K_VCS_BRANCH_ICON='\uF126 '
 
   #
-  # dir element
-  # -----------
+  # rust_version
+  # ------------
   #
-  # Depending on the color scheme of the console
-  # emulator the directory background is a very light
-  # blue. In conjunction with a white foreground the
-  # contrast is very low. Therefore a darker blue is
-  # used for the background color.
+  # Use a more "rusty" color instead of the default cyan.
+  # The default icon is also very small. Using a string as
+  # identifier is much more readable.
 
-  typeset -g POWERLEVEL9K_DIR_BACKGROUND=20
+  typeset -g POWERLEVEL9K_RUST_VERSION_FOREGROUND=136
+  typeset -g POWERLEVEL9K_RUST_VERSION_VISUAL_IDENTIFIER_EXPANSION='[rust]'
+
+  #
+  # node_version
+  # ------------
+  #
+  # The default icon isn't related to Node.JS at all. Sadly
+  # there is no Node.JS symbol that is big enough to recognize
+  # it. Therefore a string identifier is used here, too.
+
+  typeset -g POWERLEVEL9K_NODE_VERSION_VISUAL_IDENTIFIER_EXPANSION='[node]'
 }

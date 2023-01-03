@@ -28,6 +28,11 @@ if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
   # This environment variable is required by xdg-desktop-portal-wlr
   # to know which specific desktop is running.
   export XDG_CURRENT_DESKTOP=sway
+
+  # This environment variable tells Qt to use Wayland instead of X11
+  # if it is available.
+  export QT_QPA_PLATFORM="wayland;xcb"
+
   exec sway
 fi
 

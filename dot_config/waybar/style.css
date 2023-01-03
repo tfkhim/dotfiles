@@ -4,20 +4,16 @@
     font-family: Helvetica, Arial, sans-serif, Symbols Nerd Font;
     font-size: 13px;
     min-height: 0;
+    color: white;
 }
 
 window#waybar {
     background: rgba(43, 48, 59, 1);
-    color: white;
 }
 
 tooltip {
     background: rgba(43, 48, 59, 0.5);
     border: 1px solid rgba(100, 114, 125, 0.5);
-}
-
-tooltip label {
-    color: white;
 }
 
 #workspaces button {
@@ -38,7 +34,10 @@ tooltip label {
 #tray,
 #mode {
     padding: 0 5px;
-    color: #ffffff;
+}
+
+#network.disconnected {
+    color: #f53c3c;
 }
 
 #mode {

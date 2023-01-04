@@ -1,8 +1,0 @@
-[user]
-        email = 9889638+tfkhim@users.noreply.github.com
-        name = Thomas Himmelstoss
-        signingkey = 9BE6CE621C0BA6BDBB4F423C21DAEAF7DED09351
-[pull]
-	rebase = true
-[commit]
-        gpgsign = true

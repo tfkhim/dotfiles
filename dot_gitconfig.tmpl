@@ -1,0 +1,12 @@
+[user]
+        email = {{ .git.email | quote }}
+        name = {{ .git.name | quote }}
+        {{- if .git.sign }}
+        signingkey = {{ .git.signingkey }}
+        {{- end }}
+
+[pull]
+	ff = only
+
+[commit]
+        gpgsign = {{ .git.sign }}

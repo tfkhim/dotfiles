@@ -61,6 +61,12 @@ if [[ -f "${HOME}/.oh-my-zsh/oh-my-zsh.sh" ]]; then
   # otherwise show up during `chezmoi apply`.
   export ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/oh-my-zsh"
 
+  # Updating should be an explicit process instead of
+  # something which is done behind the scenes. Therefore
+  # it is disabled. Furthermore the update mechanism only
+  # works if the .oh-my-zsh directory is a Git repository.
+  export DISABLE_AUTO_UPDATE="true"
+
   plugins=(
     fzf
   )

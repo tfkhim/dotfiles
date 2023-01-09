@@ -56,7 +56,6 @@ fi
     background_jobs
     virtualenv
     pyenv
-    nvm
     node_version
     rust_version
     java_version

@@ -40,6 +40,6 @@ if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
   # client.
   export MOZ_ENABLE_WAYLAND=1
 
-  exec sway
+  exec /usr/bin/sway
 fi
 

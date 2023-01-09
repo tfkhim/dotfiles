@@ -33,6 +33,13 @@ if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
   # if it is available.
   export QT_QPA_PLATFORM="wayland;xcb"
 
+  # This environment variable tells Firefox to use Wayland as its
+  # backend if it is available. There are some cases in which the
+  # whole WM crashes if Firefox runs under XWayland. Right now
+  # Firefox seems to be more stable if run as a native Wayland
+  # client.
+  export MOZ_ENABLE_WAYLAND=1
+
   exec sway
 fi
 

@@ -1,0 +1,13 @@
+profile standalone {
+  output "eDP-1" enable scale {{ .internalDisplayScale }}
+}
+
+profile home {
+  output "eDP-1" enable scale {{ .internalDisplayScale }} position 0,1440
+  output "LG Electronics LG HDR 4K 0x00006EAD" enable scale 1.5 position 0,0
+}
+
+profile work {
+  output "eDP-1" enable scale {{ .internalDisplayScale }} position 0,0
+  output "LG Electronics LG Ultra HD 0x00008FC0" enable scale 1.5 position 1920,0
+}

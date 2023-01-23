@@ -17,35 +17,58 @@
         "backlight",
         "battery",
         "battery#bat1",
-        "clock"
+        "clock#date",
+        "clock#time"
     ],
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
+    "sway/workspaces": {
+        "format": "<b>{}</b>"
     },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
+    "sway/mode": {
+        "format": "<b>{}</b>"
+    },
+    "sway/window": {
+        "format": "<b>{}</b>"
     },
     "tray": {
         "spacing": 10
     },
-    "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%H:%M}",
-        "format-alt": "{:%d.%m.%Y}"
+    "pulseaudio": {
+        "format": "<b>{volume}%</b>\u2000{icon}\u2003{format_source}",
+        "format-bluetooth": "<b>{volume}%</b>\u2004{icon}\u2003{format_source}",
+        "format-bluetooth-muted": "<b>0%</b>\u2004婢\u2003{format_source}",
+        "format-muted": "<b>0%</b>\u2004婢\u2003{format_source}",
+        "format-source": "<b>{volume}%</b>\u2004",
+        "format-source-muted": "<b>0%</b>\u2004",
+        "format-icons": {
+            "headphone": "󰋋",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "pavucontrol"
+    },
+    "network": {
+        "format-wifi": "<b>{ifname} ({signalStrength}%)</b>\u2004",
+        "format-ethernet": "<b>{ifname}</b>\u2004",
+        "format-linked": "<b>{ifname} (No IP)</b>\u2004",
+        "format-disconnected": "<b>Disconnected</b>\u2004",
+        "tooltip-format": "{ipaddr}/{cidr}",
     },
     "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
+        "format": "<b>{usage}%</b>\u2004"
     },
     "memory": {
-        "format": "{}% "
+        "format": "<b>{}%</b>\u2004"
     },
     "backlight": {
-        "format": "{percent}% {icon}",
+        "format": "<b>{percent}%</b>\u2004{icon}",
         "format-icons": [
             "",
             "",
@@ -58,10 +81,9 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
+        "format": "<b>{capacity}%</b>\u2004{icon}",
+        "format-charging": "<b>{capacity}%</b>\u2004",
+        "format-plugged": "<b>{capacity}%</b>\u2004",
         "format-icons": [
             "",
             "",
@@ -76,10 +98,9 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
+        "format": "<b>{capacity}%</b>\u2004{icon}",
+        "format-charging": "<b>{capacity}%</b>\u2004",
+        "format-plugged": "<b>{capacity}%</b>\u2004",
         "format-icons": [
             "",
             "",
@@ -88,34 +109,11 @@
             ""
         ]
     },
-    "network": {
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    "clock#date": {
+        "tooltip-format": "<big><b>{:%Y %B}</b>\n\n<tt>{calendar}</tt></big>",
+        "format": "<b>{:%d.%m.%Y}</b>\u2004"
     },
-    "pulseaudio": {
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": "婢 {format_source}",
-        "format-muted": "婢 {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": [
-                "",
-                "",
-                ""
-            ]
-        },
-        "on-click": "pavucontrol"
+    "clock#time": {
+        "format": "<b>{:%H:%M}</b>\u2004"
     }
 }

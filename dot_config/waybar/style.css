@@ -1,19 +1,19 @@
 * {
     border: none;
-    border-radius: 0;
-    font-family: Helvetica, Arial, sans-serif, Symbols Nerd Font;
-    font-size: 13px;
-    min-height: 0;
+    border-radius: 0px;
+    font-family: Cantarell, Helvetica, Arial, sans-serif, Symbols Nerd Font;
     color: white;
 }
 
 window#waybar {
-    background: rgba(43, 48, 59, 1);
+    font-size: 14px;
+    background: black;
 }
 
 tooltip {
-    background: rgba(43, 48, 59, 0.5);
-    border: 1px solid rgba(100, 114, 125, 0.5);
+    font-size: 14px;
+    background: black;
+    border-radius: 7px;
 }
 
 #workspaces button {
@@ -21,7 +21,7 @@ tooltip {
 }
 
 #workspaces button.focused {
-    background: #64727D;
+    background: #3584e4;
 }
 
 #clock,
@@ -37,30 +37,30 @@ tooltip {
 }
 
 #network.disconnected {
-    color: #f53c3c;
+    color: #ed333b;
 }
 
 #mode {
-    background: #64727D;
+    background: #cd9309;
 }
 
 #battery.charging {
-    color: #06e919;
+    color: #33d17a;
 }
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
-        color: black;
+        background-color: #ed333b;
+	border-radius: 5px;
     }
 }
 
 #battery.warning:not(.charging) {
-    background: #f53c3c;
     color: white;
     animation-name: blink;
-    animation-duration: 0.5s;
+    animation-duration: 1s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
+

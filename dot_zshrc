@@ -69,6 +69,12 @@ if [[ -f "${HOME}/.oh-my-zsh/oh-my-zsh.sh" ]]; then
 
   plugins=(
     fzf
+    # gitfast also fixes a strange bug. When completing
+    # git log --show<TAB> a hyphen is added below the
+    # cursor. The different completion from gitfast
+    # doesn't seem to have this problem.
+    gitfast
+    git-extras
   )
 
   source "${ZSH}/oh-my-zsh.sh"

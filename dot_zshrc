@@ -28,6 +28,15 @@ fi
 alias ls='ls --color=auto'
 alias vim='nvim'
 
+alias gst='git status'
+alias gl='git log'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gau='git add --update && git status'
+alias gc='git commit'
+alias gca='git commit --amend'
+alias gpp='git pull --prune'
+
 #
 # ZSH plugins
 # ===========

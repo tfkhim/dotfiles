@@ -40,6 +40,12 @@ if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
   # client.
   export MOZ_ENABLE_WAYLAND=1
 
+  # This environment variable fixes problems with Java applications
+  # like InteliJ or Android Studio. Without this the JetBrains
+  # applications render a blank canvas as of March 2023. See also:
+  # https://wiki.archlinux.org/title/sway#Java_applications
+  export _JAVA_AWT_WM_NONREPARENTING=1
+
   exec /usr/bin/sway
 fi
 

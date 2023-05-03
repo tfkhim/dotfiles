@@ -35,14 +35,14 @@
     "pulseaudio": {
         "format": "<b>{volume}%</b>\u2000{icon}\u2003{format_source}",
         "format-bluetooth": "<b>{volume}%</b>\u2004{icon}\u2003{format_source}",
-        "format-bluetooth-muted": "<b>0%</b>\u2004婢\u2003{format_source}",
-        "format-muted": "<b>0%</b>\u2004婢\u2003{format_source}",
+        "format-bluetooth-muted": "<b>0%</b>\u2004󰖁\u2003{format_source}",
+        "format-muted": "<b>0%</b>\u2004󰖁\u2003{format_source}",
         "format-source": "<b>{volume}%</b>\u2004",
         "format-source-muted": "<b>0%</b>\u2004",
         "format-icons": {
             "headphone": "󰋋",
-            "hands-free": "",
-            "headset": "",
+            "hands-free": "󰋎",
+            "headset": "󰋎",
             "phone": "",
             "portable": "",
             "car": "",
@@ -56,10 +56,10 @@
     },
     "network": {
         "format-wifi": "<b>{ifname} ({signalStrength}%)</b>\u2004",
-        "format-ethernet": "<b>{ifname}</b>\u2004",
-        "format-linked": "<b>{ifname} (No IP)</b>\u2004",
-        "format-disconnected": "<b>Disconnected</b>\u2004",
-        "tooltip-format": "{ipaddr}/{cidr}",
+        "format-ethernet": "<b>{ifname}</b>\u2004󰈀",
+        "format-linked": "<b>{ifname} (No IP)</b>\u2004󰈀",
+        "format-disconnected": "<b>Disconnected</b>\u2004󰌺",
+        "tooltip-format": "{ipaddr}/{cidr}"
     },
     "cpu": {
         "format": "<b>{usage}%</b>\u2004"
@@ -70,9 +70,9 @@
     "backlight": {
         "format": "<b>{percent}%</b>\u2004{icon}",
         "format-icons": [
-            "",
-            "",
-            ""
+            "󱩐",
+            "󱩒",
+            "󰛨"
         ]
     },
     "battery": {
@@ -82,7 +82,7 @@
             "critical": 15
         },
         "format": "<b>{capacity}%</b>\u2004{icon}",
-        "format-charging": "<b>{capacity}%</b>\u2004",
+        "format-charging": "<b>{capacity}%</b>\u2004󰃨",
         "format-plugged": "<b>{capacity}%</b>\u2004",
         "format-icons": [
             "",
@@ -99,7 +99,7 @@
             "critical": 15
         },
         "format": "<b>{capacity}%</b>\u2004{icon}",
-        "format-charging": "<b>{capacity}%</b>\u2004",
+        "format-charging": "<b>{capacity}%</b>\u2004󰃨",
         "format-plugged": "<b>{capacity}%</b>\u2004",
         "format-icons": [
             "",

@@ -121,6 +121,17 @@ fi
 source_existing /usr/share/nvm/init-nvm.sh
 
 #
+# Terraform version manager (tfenv)
+# ---------------------------------
+#
+# See:
+# - https://github.com/tfutils/tfenv#manual
+
+if [[ -d "${HOME}/.tfenv/bin" ]]; then
+  export PATH="${PATH}:${HOME}/.tfenv/bin"
+fi
+
+#
 # Cleanup
 # =======
 #

@@ -7,27 +7,43 @@ profile home {
   output "LG Electronics LG HDR 4K 0x00006EAD" enable scale 1.5 position 0,0
 }
 
-profile work {
+profile work_muc_1 {
   output "eDP-1" enable scale {{ .internalDisplayScale }} position 0,0
   output "LG Electronics LG Ultra HD 0x00008FC0" enable scale 1.5 position 1920,0
 }
 
-profile work_2 {
+profile work_muc_2 {
   output "eDP-1" enable scale {{ .internalDisplayScale }} position 0,0
   output "LG Electronics LG HDR 4K 0x00008F1B" enable scale 1.5 position 1920,0
 }
 
-profile work_3 {
+profile work_muc_3 {
   output "eDP-1" enable scale {{ .internalDisplayScale }} position 0,0
   output "LG Electronics LG HDR 4K 0x0000878F" enable scale 1.5 position 1920,0
 }
 
-profile work_4 {
+profile work_muc_4 {
   output "eDP-1" enable scale {{ .internalDisplayScale }} position 2560,0
   output "LG Electronics LG Ultra HD 0x00005FE5" enable scale 1.5 position 0,0
 }
 
-profile work_5 {
+profile work_muc_5 {
   output "eDP-1" enable scale {{ .internalDisplayScale }} position 0,0
   output "LG Electronics LG HDR 4K 0x00006FF6" enable scale 1.5 position 1920,0
 }
+
+profile work_muc_6 {
+  output "eDP-1" enable scale {{ .internalDisplayScale }} position 0,0
+  output "LG Electronics LG Ultra HD 0x00004788" enable scale 1.5 position 1920,0
+}
+
+profile work_ber_1 {
+  output "eDP-1" enable scale {{ .internalDisplayScale }} position 0,0
+  output "LG Electronics LG HDR 4K 0x0000EE0B" enable scale 1.5 position 1920,0
+}
+
+profile work_rgb_1 {
+  output "eDP-1" enable scale {{ .internalDisplayScale }} position 2560,0
+  output "LG Electronics LG HDR 4K 0x00005504" enable scale 1.5 position 0,0
+}
+

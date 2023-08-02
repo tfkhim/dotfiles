@@ -132,6 +132,17 @@ if [[ -d "${HOME}/.tfenv/bin" ]]; then
 fi
 
 #
+# Direnv
+# ------
+#
+# See:
+# - https://direnv.net/docs/hook.html#zsh
+
+if [[ -f "/usr/bin/direnv" ]]; then
+  eval "$(/usr/bin/direnv hook zsh)"
+fi
+
+#
 # Cleanup
 # =======
 #
